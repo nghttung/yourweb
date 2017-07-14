@@ -21,7 +21,7 @@ module.exports = {
 
         params['zipCodes'] = newZip
 
-        return callback(params)
+       // return callback(params)
 
         
     },
