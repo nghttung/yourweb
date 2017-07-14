@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose')
 
 
-var dbUrl = 'mongodb://heroku_8jz9q046:@ds157342.mlab.com:57342/heroku_8jz9q046'
+var dbUrl = 'mongodb://heroku_8jz9q046:@Net12345678@ds157342.mlab.com:57342/heroku_8jz9q046'
 mongoose.connect(dbUrl, function (err, res) {
   if (err) {
     console.log(' CONNECT DB FAILED : ' + err)
