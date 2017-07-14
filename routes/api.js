@@ -15,8 +15,7 @@ router.get('/:resource', function (req, res, next) {
             })
             return
         }
-       
-    
+           
         res.json({
             confirmation: controller.find(),
             message: ' co resource ' + resource 
