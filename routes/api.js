@@ -8,7 +8,7 @@ var router = express.Router();
 
 router.get('/:resource', function (req, res, next) {
     var resource = req.params.resource
-    var controller = controllers[resource] // resource la zone || comment
+   // var controller = controllers[resource] // resource la zone || comment
 
      res.json({
                 confirmation: 'Fail',
