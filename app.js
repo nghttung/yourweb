@@ -5,20 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var mongoose = require('mongoose')
-
-/*
-
-var dbUrl = 'mongodb://heroku_8jz9q046:@Net12345678@ds157342.mlab.com:57342/heroku_8jz9q046' || 'mongodb://localhost/resapi'
-mongoose.connect(dbUrl, function (err, res) {
-  if (err) {
-    console.log(' CONNECT DB FAILED : ' + err)
-  } else {
-    console.log(' CONNECT DB SUCCESS : ' + dbUrl)
-  }
-})
-
-*/
+var index = require('./routes/index');
+var users = require('./routes/users');
 
 var app = express();
 
@@ -34,11 +22,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var index = require('./routes/index');
 app.use('/', index);
-
-var api = require('./routes/api');
-app.use('/api', api);
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
