@@ -2,62 +2,24 @@ var Zone = require('../models/Zone')
 
 module.exports = {
 
-    find: function (params, callback) {
-        Zone.find(params, function (err, zones) {
-            if (err) {
-                callback(err, null)
-                return
-            }
-            callback(null, zones)
-        })
+     find: function () {
+       return 'find Zone'
     },
 
-    findById: function (id, callback) {
-        Zone.findById(id, function (err, zone) {
-            if (err) {
-                callback(err, null)
-                return
-            }
-            callback(null, zone)
-        })
+    findById: function () {
+        return 'findById Zone'
     },
 
-    create: function (params, callback) {
-        var zips = params['zipCodes']
-        var zip = zips.split(',')
-        var newZip = []
-        zip.forEach(function(zipCode) {
-            newZip.push(zipCode.trim())
-        });
-
-        params['zipCodes'] = newZip
-
-        Zone.create(params, function (err, zone) {
-            if (err) {
-                callback(err, null)
-                return
-            }
-            callback(null, zone)
-        })
+    create: function () {
+        return 'create Zone'
     },
 
-    update: function (id, params, callback) {
-        Zone.findByIdAndUpdate(id, params,{new: true},function (err, zone) {
-            if (err) {
-                callback(err, null)
-                return
-            }
-            callback(null, zone)
-        })
+    update: function () {
+        return 'update Zone'
     },
+       
 
-    delete: function (id, callback) {
-        Zone.findByIdAndRemove(id, function (err) {
-            if (err) {
-                callback(err, null)
-                return
-            }
-            callback(null, null)
-        })
+    delete: function () {
+        return 'delete Zone'
     }
 }
