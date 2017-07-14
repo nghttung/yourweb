@@ -16,21 +16,12 @@ router.get('/:resource', function (req, res, next) {
             return
         }
        
-    controller.find(res.query, function (err, result) {
-        if (err) {
-            res.json({
-                confirmation: 'Fail',
-                message: err
-            })
-            return
-        }
+    
         res.json({
-            confirmation: 'success',
-            result: result
+            confirmation: controller.find(),
+            message: ' co resource ' + resource 
         })
-    })
-}) 
-
-
+   
+})
 
 module.exports = router;
