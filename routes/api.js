@@ -23,4 +23,37 @@ router.get('/:resource', function (req, res, next) {
    
 })
 
+router.post('/:resource', function (req, res, next) {
+    var resource = req.params.resource
+     var controller = controllers[resource]
+    if (controller == null) {
+            res.json({
+                confirmation: 'Fail',
+                message: 'khong co resource post ' + resource  //err
+            })
+            return
+     }
+    
+     res.json({
+            confirmation: 'success',
+            result: req.body
+        })
+  
+ /*  
+    controller.create(req.body, function (err, result) {
+        if (err) {
+            res.json({
+                confirmation: 'Fail',
+                    message: err
+            })
+            return
+        }
+        res.json({
+            confirmation: 'success',
+            result: result
+        })
+    })
+    */
+})
+
 module.exports = router;
