@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose')
 
+/*
+
 var dbUrl = 'mongodb://heroku_8jz9q046:@Net12345678@ds157342.mlab.com:57342/heroku_8jz9q046' || 'mongodb://localhost/resapi'
 mongoose.connect(dbUrl, function (err, res) {
   if (err) {
@@ -15,6 +17,8 @@ mongoose.connect(dbUrl, function (err, res) {
     console.log(' CONNECT DB SUCCESS : ' + dbUrl)
   }
 })
+
+*/
 
 var app = express();
 
