@@ -10,10 +10,20 @@ router.get('/:resource', function (req, res, next) {
     var resource = req.params.resource
     var controller = controllers[resource] // resource la zone || comment
 
-    res.json({
-        confirmation: controller.find,
-        message: 'khong co resource ' + resource  //err
-    })
+    if (controller ==null) {
+            res.json({
+                confirmation: 'Fail',
+                message: 'khong co resource ' + resource  //err
+            })
+            return
+        }
+       
+    
+        res.json({
+            confirmation: controller.find(),
+            message: ' co resource ' + resource 
+        })
+   
 })
 
 module.exports = router;
