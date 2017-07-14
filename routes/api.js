@@ -11,7 +11,7 @@ router.get('/:resource', function (req, res, next) {
     var controller = controllers[resource] // resource la zone || comment
 
     res.json({
-        confirmation: controller.find(),
+        confirmation: controller.find,
         message: 'khong co resource ' + resource  //err
     })
 })
