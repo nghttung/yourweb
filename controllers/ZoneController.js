@@ -21,17 +21,9 @@ module.exports = {
 
         params['zipCodes'] = newZip
 
-        return params
+        return callback(params)
 
-/*
-        Zone.create(params, function (err, zone) {
-            if (err) {
-                callback(err, null)
-                return
-            }
-            callback(null, zone)
-        })
-        */
+        
     },
 
     update: function () {

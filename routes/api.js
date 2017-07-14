@@ -37,14 +37,8 @@ router.post('/:resource', function (req, res, next) {
    
   
   
-    controller.create(req.body, (err, result)=> {
-        if (err) {
-            res.json({
-                confirmation: 'Fail',
-                    message: err
-            })
-            return
-        }
+    controller.create(req.body, (result)=> {
+      
         res.json({
             confirmation: 'success',
             result: result
