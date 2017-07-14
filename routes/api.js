@@ -4,7 +4,7 @@ var router = express.Router()
 
 router.get('/:resource', (req, res) => {
     
-    var resource = res.params.resource
+    var resource = req.params.resource
     
     res.json({
         confirmation: 'success',
