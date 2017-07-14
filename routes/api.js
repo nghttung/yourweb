@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 // var Zonecontroller = require('../controllers/ZoneController')
-var controllers = require('../controllers')
+//var controllers = require('../controllers')
 
 
 
@@ -10,6 +10,11 @@ router.get('/:resource', function (req, res, next) {
     var resource = req.params.resource
     var controller = controllers[resource] // resource la zone || comment
 
+     res.json({
+                confirmation: 'Fail',
+                message: 'khong co resource ' + resource  //err
+    })
+    /*
     if (controller ==null) {
             res.json({
                 confirmation: 'Fail',
@@ -31,9 +36,10 @@ router.get('/:resource', function (req, res, next) {
             result: result
         })
     })
+    */
 }) 
 
-
+/*
 router.get('/:resource/:id', function (req, res, next) {
     var resource = req.params.resource
     var id = req.params.id
@@ -89,5 +95,6 @@ router.post('/:resource', function (req, res, next) {
     })    
 })
 
+*/
 
 module.exports = router;
