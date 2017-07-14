@@ -34,12 +34,9 @@ router.post('/:resource', function (req, res, next) {
             return
      }
     
-     res.json({
-            confirmation: 'success',
-            result: req.body
-        })
+   
   
- /*  
+  
     controller.create(req.body, function (err, result) {
         if (err) {
             res.json({
@@ -53,7 +50,7 @@ router.post('/:resource', function (req, res, next) {
             result: result
         })
     })
-    */
+  
 })
 
 module.exports = router;
