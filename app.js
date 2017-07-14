@@ -5,6 +5,17 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var mongoose = require('mongoose')
+
+var dbUrl = 'mongodb://localhost/resapi'
+mongoose.connect(dbUrl, function (err, res) {
+  if (err) {
+    console.log(' CONNECT DB FAILED : ' + err)
+  } else {
+    console.log(' CONNECT DB SUCCESS : ' + dbUrl)
+  }
+})
+
 var app = express();
 
 // view engine setup
