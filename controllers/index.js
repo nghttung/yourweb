@@ -1,5 +1,5 @@
-var ZoneController = require('./ZoneController')
-var CommentController = require('./CommentController')
+var ZoneController = 'ZoneController'   //require('./ZoneController')
+var CommentController = 'CommentController' //require('./CommentController')
 
 module.exports = {
     comment: CommentController,
