@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 // var Zonecontroller = require('../controllers/ZoneController')
-//var controllers = require('../controllers')
+var controllers = require('../controllers')
 
 
 
