@@ -83,7 +83,7 @@ router.post('/:resource', function (req, res, next) {
             return
         }
 
-        res.redirect('/'+resource)
+        res.redirect('./'+resource)
 
         /*
         res.json({
