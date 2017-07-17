@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose')
 
 
-var dbUrl = process.env.MONGODB_URI
+var dbUrl = process.env.MONGODB_URI || 'mongodb://localhost/resapi'
 mongoose.connect(dbUrl, function (err, res) {
   if (err) {
     console.log(' CONNECT DB FAILED : ' + err)
