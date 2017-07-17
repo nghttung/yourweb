@@ -12,9 +12,6 @@ module.exports = {
 
     create: function (params, callback) {
 
-        return callback(params)
-
-        /*
         var zips = params['zipCodes']
         var zip = zips.split(',')
         var newZip = []
@@ -26,7 +23,7 @@ module.exports = {
         params['zipCodes'] = newZip
 
        return callback(params)
-*/
+
         
     },
 
