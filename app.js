@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose')
 
-/*
+
 var dbUrl = process.env.MONGODB_URI
 mongoose.connect(dbUrl, function (err, res) {
   if (err) {
@@ -18,7 +18,7 @@ mongoose.connect(dbUrl, function (err, res) {
   }
 })
 
-*/
+
 
 var app = express();
 
