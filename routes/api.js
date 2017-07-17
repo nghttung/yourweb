@@ -25,7 +25,7 @@ router.get('/:resource', function (req, res, next) {
 
 router.post('/:resource', function (req, res, next) {
     var resource = req.params.resource
-     var controller = controllers[resource]
+    var controller = controllers[resource]
     if (controller == null) {
             res.json({
                 confirmation: 'Fail',
@@ -33,15 +33,12 @@ router.post('/:resource', function (req, res, next) {
             })
             return
      }
-    
-   
-  
-  
+      
     controller.create(req.body, (result)=> {
       
         res.json({
             confirmation: 'success',
-            result: req.body
+            result: result
         })
     })
   
