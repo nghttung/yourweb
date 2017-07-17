@@ -34,11 +34,11 @@ router.post('/:resource', function (req, res, next) {
             return
      }
       
-    controller.create(req.body, (result)=> {
+    controller.create(req.body, (err, result)=> {
       
         res.json({
             confirmation: 'success',
-            result: req.body
+            result: result
         })
     })
   

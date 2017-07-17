@@ -17,7 +17,7 @@ module.exports = {
         var newZip = []
 
         zip.forEach(function(zipCode) {
-            newZip.push(zipCode.trim() + 'abc')
+            newZip.push(zipCode.trim())
         });
 
         params['zipCodes'] = newZip
