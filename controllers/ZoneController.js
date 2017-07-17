@@ -2,43 +2,62 @@ var Zone = require('../models/Zone')
 
 module.exports = {
 
-     find: function () {
-       return 'find Zone'
+    find: function (params, callback) {
+        Zone.find(params, function (err, zones) {
+            if (err) {
+                callback(err, null)
+                return
+            }
+            callback(null, zones)
+        })
     },
 
-    findById: function () {
-        return 'findById Zone'
-    },
-
-    create: function (params, callback) {
-
-        var zips = params['zipCodes']
-        var zip = zips.split(',')
-        var newZip = []
-
-        zip.forEach(function(zipCode) {
-            newZip.push(zipCode.trim())
-        });
-
-        params['zipCodes'] = newZip
-
-       Zone.create(params, function (err, zone) {
+    findById: function (id, callback) {
+        Zone.findById(id, function (err, zone) {
             if (err) {
                 callback(err, null)
                 return
             }
             callback(null, zone)
         })
-
-        
     },
 
-    update: function () {
-        return 'update Zone'
-    },
-       
+    create: function (params, callback) {
+        var zips = params['zipCodes']
+        var zip = zips.split(',')
+        var newZip = []
+        zip.forEach(function(zipCode) {
+            newZip.push(zipCode.trim())
+        });
 
-    delete: function () {
-        return 'delete Zone'
+        params['zipCodes'] = newZip
+
+        Zone.create(params, function (err, zone) {
+            if (err) {
+                callback(err, null)
+                return
+            }
+            callback(null, zone)
+        })
+    },
+
+    update: function (id, params, callback) {
+        Zone.findByIdAndUpdate(id, params,{new: true},function (err, zone) {
+            if (err) {
+                callback(err, null)
+                return
+            }
+            callback(null, zone)
+        })
+    },
+
+    delete: function (id, callback) {
+        Zone.findByIdAndRemove(id, function (err) {
+            if (err) {
+                callback(err, null)
+                return
+            }
+            callback(null, null)
+        })
     }
 }
