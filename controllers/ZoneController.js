@@ -12,7 +12,7 @@ module.exports = {
 
     create: function (params, callback) {
 
-        return (params)
+        return callback(params)
 
         /*
         var zips = params['zipCodes']
