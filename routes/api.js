@@ -82,11 +82,15 @@ router.post('/:resource', function (req, res, next) {
             })
             return
         }
-        
+
+        res.redirect('/'+resource)
+
+        /*
         res.json({
             confirmation: 'success',
             result: result
         })
+        */
     })    
 })
 
