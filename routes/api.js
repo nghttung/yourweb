@@ -82,10 +82,15 @@ router.post('/:resource', function (req, res, next) {
             })
             return
         }
+
+        res.render('/'+resource)
+
+        /*
         res.json({
             confirmation: 'success',
             result: result
         })
+        */
     })    
 })
 
